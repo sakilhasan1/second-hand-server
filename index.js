@@ -169,7 +169,6 @@ app.post('/add', async (req, res) => {
 })
 
 
-
 app.get('/addSpecialty', async (req, res) => {
     const query = {};
     const result = await categoryCollection.find(query).project({ brand: 1 }).toArray()
@@ -240,7 +239,6 @@ app.put('/users/admin/:id', async (req, res) => {
 app.get('/users/:email', async (req, res) => {
     try {
         const email = req.params.email;
-        console.log(email);
         const query = { email: email }
         const user = await userCollection.findOne(query);
         res.send({
